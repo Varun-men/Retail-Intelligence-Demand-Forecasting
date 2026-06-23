@@ -157,17 +157,29 @@ C_BLU = "#2563eb"; C_PUR = "#7c3aed"; C_TEA = "#059669"; C_COR = "#ef4444"; C_AM
 # ─────────────────────────────────────────────────────────────────────────────
 # DATA & MODEL
 # ─────────────────────────────────────────────────────────────────────────────
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
 @st.cache_data
-def load_data(): return pd.read_csv("retail_engineered.csv")
+def load_data():
+    return pd.read_csv(
+        BASE_DIR / "retail_engineered.csv"
+    )
 
 @st.cache_resource
-def load_model(): return joblib.load("demand_forecasting_model.pkl")
+def load_model():
+    return joblib.load(
+        BASE_DIR / "demand_forecasting_model.pkl"
+    )
 
 try:
     df = load_data()
     model = load_model()
-except:
-    st.error("Error loading data")
+
+except Exception as e:
+    st.error(f"Error loading data: {e}")
+    st.exception(e)
     st.stop()
 
 MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
