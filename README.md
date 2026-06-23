@@ -186,13 +186,11 @@ An interactive Streamlit dashboard was developed to visualize insights and predi
 
 ## Dashboard Screenshots
 
-Add screenshots inside the `screenshots/` folder and reference them here.
-
 Example:
 
-```markdown
-![Dashboard](screenshots/dashboard.png)
-```
+
+<img width="1852" height="896" alt="Dashboard" src="https://github.com/user-attachments/assets/2d7ab883-d921-4f75-9fa3-e878b2ad2464" />
+<img width="1877" height="892" alt="Prediction" src="https://github.com/user-attachments/assets/c7eff534-6aa1-4088-9c03-703ef584b68b" />
 
 ---
 
