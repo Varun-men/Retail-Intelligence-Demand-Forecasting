@@ -8,3 +8,4 @@ pymysql
 joblib
 plotly
 scikit-learn==1.5.2
+statsmodels
